@@ -1,0 +1,14 @@
+server:
+  port: 8089
+  servlet:
+    context-path: "/cas"
+cas:
+  service:
+    login: "${cas.url.prefix}/login"
+    logout: "${cas.url.prefix}/logout"
+  url:
+    prefix: "http://localhost:8080/cas"
+app:
+  service:
+    url: "http://localhost:${server.port}${server.servlet.context-path}"
+    home: "http://localhost:${server.port}${server.servlet.context-path}"
