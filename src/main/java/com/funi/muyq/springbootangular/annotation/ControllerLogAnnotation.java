@@ -15,6 +15,6 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface SystemLogAnnotation {
+public @interface ControllerLogAnnotation {
     String value() default "";
 }

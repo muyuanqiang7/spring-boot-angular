@@ -1,15 +1,11 @@
 package com.funi.muyq.springbootangular.controller;
 
-import com.funi.muyq.springbootangular.annotation.SystemLogAnnotation;
+import com.funi.muyq.springbootangular.annotation.ControllerLogAnnotation;
 import com.funi.muyq.springbootangular.entity.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Package: [com.funi.muyq.springbootangular.controllerProductController]
@@ -31,7 +27,7 @@ public class ProductController extends BaseController {
         return new ResponseEntity<>("Product saved successfully", HttpStatus.OK);
     }
 
-    @SystemLogAnnotation
+    @ControllerLogAnnotation
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
     public ResponseEntity<String> updateProduct(@PathVariable Integer id, @RequestBody Product product) {
         Product storedProduct = new Product();

@@ -14,9 +14,9 @@ import lombok.Data;
  */
 @Data
 public class User {
-    private String firstName;
-    private String lastName;
-    private Integer age;
+    private String id;
+    private String uid;
+    private String psw;
     private String address;
     private String email;
     private String websiteUrl;

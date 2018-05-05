@@ -25,15 +25,14 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 @Aspect
 @Configuration
-public class SystemLogInterceptor {
-    @Pointcut(value = "@annotation(com.funi.muyq.springbootangular.annotation.SystemLogAnnotation)")
+public class ControllerLogInterceptor {
+    @Pointcut(value = "@annotation(com.funi.muyq.springbootangular.annotation.ControllerLogAnnotation)")
     public void pointCut() {
 
     }
 
     @Around(value = "pointCut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        //Advice
         long startTime = System.nanoTime();
         RequestAttributes requestAttr = RequestContextHolder.currentRequestAttributes();
         if (!(requestAttr instanceof ServletRequestAttributes)) {
