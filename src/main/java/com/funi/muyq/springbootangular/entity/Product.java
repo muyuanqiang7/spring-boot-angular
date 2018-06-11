@@ -1,5 +1,6 @@
 package com.funi.muyq.springbootangular.entity;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
@@ -13,6 +14,7 @@ import lombok.Data;
  * @Version: [v1.0]
  */
 @Data
+@ApiModel
 public class Product {
     private String id;
     private String imageUrl;

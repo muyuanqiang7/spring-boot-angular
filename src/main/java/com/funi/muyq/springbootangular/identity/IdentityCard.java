@@ -121,17 +121,14 @@ public class IdentityCard {
     public static void main(String[] args) throws ParseException {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
-        Date date = simpleDateFormat.parse("19950801");
+        Date date = simpleDateFormat.parse("19890101");
         calendar.setTime(date);
-        String excludeNum = String.join(",", lastNumber);
+        // String excludeNum = String.join(",", lastNumber);
         StringBuilder builder = new StringBuilder();
-        for (int i = 1; i <= 30; i++) {
+        for (int i = 1; i < 365; i++) {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
-            for (int j = 0; j < 10; j++) {
-                if (!excludeNum.contains(String.valueOf(j))) {
-                    builder.append("330825").append(simpleDateFormat.format(calendar.getTime())).append("432").append(j).append(",");
-                }
-            }
+            builder.append("500384").append(simpleDateFormat.format(calendar.getTime())).append("0024").append(",");
+
         }
         for (String item : builder.toString().split(",")) {
             if (checkIdNoLastNum(item)) {
